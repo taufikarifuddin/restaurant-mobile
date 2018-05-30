@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="backgroundColor">#EBEEC1</color>
+    <color name="buttonColor">#FF9106</color>
+    <color name="buttonTextColor">#FFF</color>
+    <color name="fieldBackgroundColor">#e6e6e6</color>
+    <color name="fieldTextColor">#666666</color>
+    <color name="backgroundHeaderExpandable">#B5B076</color>
+    <color name="mainTextColor">#FFF</color>
+</resources>

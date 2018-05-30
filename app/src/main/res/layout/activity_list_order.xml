@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".ListOrderActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:padding="@dimen/default_padding_inner_component">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/fieldTextColor"
+                    android:text="Tanggal"
+                    android:textSize="@dimen/default_text_size"
+                    android:textAlignment="center"
+                    />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/fieldTextColor"
+                    android:text="Total"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/default_text_size"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:padding="@dimen/default_padding_inner_component">
+
+                <TextView
+                    android:textColor="@color/fieldTextColor"
+                    android:text="07-07-2012"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/default_text_size"
+                    />
+
+                <TextView
+                    android:textColor="@color/fieldTextColor"
+                    android:text="Rp. 1.200.000,-"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/default_text_size"
+                    />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

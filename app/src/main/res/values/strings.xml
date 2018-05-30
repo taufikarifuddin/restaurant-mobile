@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Restaurant</string>
+
+    <!-- form section -->
+    <string name="form_username">Username</string>
+    <string name="form_password">Password</string>
+    <string name="form_logged_in">Log In</string>
+    <string name="form_register">Register</string>
+
+    <string name="component_header_login">Member Login</string>
+    <string name="component_header_sublogin">Please login to continue..</string>
+
+    <string name="component_header_register">Registration Page</string>
+    <string name="component_header_subregister">Inroduce yourself with fill your identity</string>
+
+    <string name="main_order_text">Your Order</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

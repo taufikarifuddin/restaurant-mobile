@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/default_form_component_radius" />
+    <padding android:top="@dimen/default_padding_inner_component" android:right="@dimen/default_padding_inner_component"
+        android:left="@dimen/default_padding_inner_component" android:bottom="@dimen/default_padding_inner_component" />
+    <solid android:color="@color/fieldBackgroundColor" />
+</shape>

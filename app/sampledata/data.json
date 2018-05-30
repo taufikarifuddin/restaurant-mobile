@@ -1,0 +1,39 @@
+{
+  "data" : {
+    "main" : {
+      "header" : {
+        "name" : "Taufik Arifuddin",
+        "saldo" : "Rp. 1.000.000,-"
+      },
+      "content" : {
+        "category" : [
+          {
+            "id" : 1,
+            "name" : "category 1"
+          },
+          {
+            "id" : 2,
+            "name" : "category 2"
+          }
+        ],
+        "items" : [
+          {
+            "id" : 1,
+            "name" : "barang1",
+            "categoryId" : 1
+          },
+          {
+            "id" : 2,
+            "name" : "barang2",
+            "categoryId" : 2
+          }
+        ]
+      }
+    },
+    "detailOrder" : {
+      "name" : "Order 1",
+      "qty" : "2",
+      "jumlah" : "Rp.10.000,-"
+    }
+  }
+}
