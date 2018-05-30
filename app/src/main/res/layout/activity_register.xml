@@ -119,8 +119,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/field_rounded"
-                        android:drawableLeft="@drawable/ic_account"
-                        android:hint="@string/form_username"
+                        android:drawableLeft="@drawable/ic_gembok"
+                        android:hint="@string/form_repassword"
                         android:textColor="@color/fieldTextColor" />
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>

@@ -42,11 +42,13 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        boolean result = data.getBooleanExtra("response",false);
-        if( result ){
-            gotoMainPage();
-        }else{
-            Toast.makeText(this, "Gagal", Toast.LENGTH_SHORT).show();
+        if( requestCode == REGISTER_RESULT_CODE && resultCode == REGISTER_RESULT_CODE ) {
+            boolean result = data.getBooleanExtra("response", false);
+            if (result) {
+                gotoMainPage();
+            } else {
+                Toast.makeText(this, "Gagal", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

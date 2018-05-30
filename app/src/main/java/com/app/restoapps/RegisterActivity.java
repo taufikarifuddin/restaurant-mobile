@@ -3,6 +3,7 @@ package com.app.restoapps;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -13,6 +14,9 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ButterKnife.bind(this);
     }
@@ -29,4 +33,13 @@ public class RegisterActivity extends AppCompatActivity {
         return intent;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed(); break;
+            default : onBackPressed();break;
+        }
+        return true;
+    }
 }

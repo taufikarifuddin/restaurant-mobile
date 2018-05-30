@@ -1,6 +1,7 @@
 package com.app.restoapps.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -28,11 +30,11 @@ import java.util.Set;
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private LayoutInflater mLayoutInflater;
-    private HashMap<String,List<Item>> mData;
+    private Map<String,List<Item>> mData;
     private List<String> mHeader;
     OnClickBtnQty mQtyClick;
 
-    public ExpandableListAdapter(Context ctx,HashMap<String,List<Item>> data,
+    public ExpandableListAdapter(Context ctx,Map<String,List<Item>> data,
                                  OnClickBtnQty qty){
         mLayoutInflater = (LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mData = data;
@@ -52,6 +54,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         for(String key : keys){
             listOfKey.add(key);
         }
+        Log.d("list of header : ",listOfKey.toString());
 
         return listOfKey;
     }
@@ -122,30 +125,33 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         if( convertView == null ){
             convertView = mLayoutInflater.inflate(R.layout.adapter_item_list,null);
-
-            final Item item = ((Item)getChild(groupPosition,childPosition));
-
-            Button increaseBtn = (Button) convertView.findViewById(R.id.btnIncrease);
-            Button decreaseBtn = (Button) convertView.findViewById(R.id.btnDecrease);
-            final TextView textView = (TextView) convertView.findViewById(R.id.tvPrice);
-
-            increaseBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    updatePrice(item,textView,QtyButtonTrigger.INCREASE);
-                }
-            });
-
-            decreaseBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    updatePrice(item,textView,QtyButtonTrigger.DECREASE);
-                }
-            });
-
-            ((TextView) convertView.findViewById(R.id.tvExpandableListItemName)).setText(item.getName());
-            ((EditText) convertView.findViewById(R.id.etQty)).setKeyListener(null);
         }
+
+
+        final Item item = ((Item)getChild(groupPosition,childPosition));
+
+        Button increaseBtn = (Button) convertView.findViewById(R.id.btnIncrease);
+        Button decreaseBtn = (Button) convertView.findViewById(R.id.btnDecrease);
+
+        final FormView fm = new FormView();
+        fm.setEdit(((EditText) convertView.findViewById(R.id.etQty)));
+        fm.setTextView(((TextView) convertView.findViewById(R.id.tvPrice)));
+
+        increaseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updatePrice(item,fm,QtyButtonTrigger.INCREASE);
+            }
+        });
+
+        decreaseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updatePrice(item,fm,QtyButtonTrigger.DECREASE);
+            }
+        });
+
+        ((TextView) convertView.findViewById(R.id.tvExpandableListItemName)).setText(item.getName());
 
 
 
@@ -157,9 +163,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         return false;
     }
 
-    private void updatePrice(Item item,View view,QtyButtonTrigger trigger){
+    private void updatePrice(Item item,FormView fm,QtyButtonTrigger trigger){
 
-        if( view != null) {
+        if( fm != null) {
 
             int currentQty = item.getQty();
             if( trigger.equals(QtyButtonTrigger.INCREASE) ){
@@ -170,30 +176,52 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 }
             }
 
-            int total = item.getPrice() * item.getQty();
-            mQtyClick.onClick(0,0,total);
-            updatePriceView(view,total);
+            mQtyClick.onClick(0,0,calculateTotal(item));
+
+            updatePriceView(fm,item);
         }
+    }
+
+    private int calculateTotal(Item item){
+        return item.getPrice() * item.getQty();
     }
 
     private boolean isLimitValue(int number){
         return number > 0;
     }
 
-    private void updatePriceView(View view,int total){
-        ((TextView) view).setText(String.valueOf(total));
+    private void updatePriceView(FormView fm,Item item){
+        fm.getTextView().setText("Rp."+String.valueOf(calculateTotal(item))+",-");
+        fm.getEdit().setText(String.valueOf(item.getQty()));
     }
 
-    public void refresh() {
-        for (int i = 0; i < mHeader.size(); i++) {
-            for (int j = 0; j < mData.get(i).size(); j++) {
-            }
-        }
-        notifyDataSetChanged();
-    }
 
     public enum QtyButtonTrigger{
         DECREASE,INCREASE
     }
+
+    private class FormView{
+
+        TextView textView;
+        EditText edit;
+
+        public TextView getTextView() {
+            return textView;
+        }
+
+        public void setTextView(TextView textView) {
+            this.textView = textView;
+        }
+
+        public EditText getEdit() {
+            return edit;
+        }
+
+        public void setEdit(EditText edit) {
+            this.edit = edit;
+//            this.edit.setKeyListener(null);
+        }
+    }
+
 
 }

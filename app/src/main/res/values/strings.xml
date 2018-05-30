@@ -4,6 +4,7 @@
     <!-- form section -->
     <string name="form_username">Username</string>
     <string name="form_password">Password</string>
+    <string name="form_repassword">Re-type Password</string>
     <string name="form_logged_in">Log In</string>
     <string name="form_register">Register</string>
 
