@@ -107,8 +107,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_checkout_white"
         android:background="@color/backgroundHeaderExpandable"
-        android:layout_marginRight="@dimen/default_margin_each_component"
+        android:layout_marginLeft="@dimen/default_margin_each_component"
         android:layout_marginBottom="@dimen/default_margin_each_component"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 </android.support.constraint.ConstraintLayout>

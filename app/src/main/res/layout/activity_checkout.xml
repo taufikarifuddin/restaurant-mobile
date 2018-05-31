@@ -29,9 +29,9 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="@dimen/default_margin_each_component"
-        android:layout_marginRight="@dimen/default_margin_each_component"
+        android:layout_marginLeft="@dimen/default_margin_each_component"
         android:src="@drawable/ic_money_white" />
 
 </android.support.constraint.ConstraintLayout>

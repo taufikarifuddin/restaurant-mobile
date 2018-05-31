@@ -36,11 +36,12 @@ public class MainActivity extends AppCompatActivity implements OnClickBtnQty{
 
     private ExpandableListAdapter adapter;
 
-    public static int CHECKOUT_PAGE_PAGE_REQUEST = 300;
-    public static int CHECKOUT_PAGE_PAGE_RESPONSE = 310;
+    public static final int CHECKOUT_PAGE_PAGE_REQUEST = 300;
+    public static final int CHECKOUT_PAGE_PAGE_RESPONSE = 310;
 
-    public static int DETAIL_ORDER_PAGE_REQUEST = 400;
-
+    public static final int CHANGE_PASSWORD_PAGE_REQUEST = 500;
+    public static final int CHANGE_PASSWORD_PAGE_SUCCESS_RESPONSE = 501;
+    public static final int DETAIL_ORDER_PAGE_FAILED_RESPONSE = 502;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements OnClickBtnQty{
                     }
                 }).show();
                 break;
+            case R.id.iChangePassword :
+                startActivityForResult(new Intent(this,ChangePasswordActivity.class),
+                        CHANGE_PASSWORD_PAGE_REQUEST);
+                break;
         }
 
         return true;
@@ -117,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements OnClickBtnQty{
     @OnClick(R.id.ivHistory)
     public void onHistoryClick(){
         Intent intent = new Intent(this,ListOrderActivity.class);
-        startActivityForResult(intent,DETAIL_ORDER_PAGE_REQUEST );
+        startActivity(intent);
     }
 
     @Override

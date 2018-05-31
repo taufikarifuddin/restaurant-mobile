@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableLayout
+            android:id="@+id/tlListOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:stretchColumns="*">

@@ -23,6 +23,7 @@ public class CheckoutActivity extends AppCompatActivity implements DetailOrderFr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
         initializeFragment();
+        setTitle("");
 
         ButterKnife.bind(this);
     }
