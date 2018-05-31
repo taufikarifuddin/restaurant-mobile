@@ -6,13 +6,19 @@
     <string name="form_password">Password</string>
     <string name="form_repassword">Re-type Password</string>
     <string name="form_logged_in">Log In</string>
+    <string name="form_submit">Submit</string>
     <string name="form_register">Register</string>
+    <string name="form_old_password">Old Password</string>
+    <string name="form_new_password">New Password</string>
 
     <string name="component_header_login">Member Login</string>
     <string name="component_header_sublogin">Please login to continue..</string>
 
     <string name="component_header_register">Registration Page</string>
     <string name="component_header_subregister">Inroduce yourself with fill your identity</string>
+
+    <string name="component_header_change_password">Change Password</string>
+    <string name="component_header_subchange_password">Make your account more secure</string>
 
     <string name="main_order_text">Your Order</string>
 
