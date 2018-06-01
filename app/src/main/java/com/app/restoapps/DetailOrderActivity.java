@@ -1,12 +1,15 @@
 package com.app.restoapps;
 
+import android.net.Uri;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.app.restoapps.fragment.DetailOrderFragment;
 
-public class DetailOrderActivity extends AppCompatActivity {
+public class DetailOrderActivity extends AppCompatActivity
+        implements DetailOrderFragment.OnFragmentInteractionListener{
 
     int id = 0;
 
@@ -28,5 +31,20 @@ public class DetailOrderActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

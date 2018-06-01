@@ -3,6 +3,7 @@ package com.app.restoapps;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.restoapps.dto.Order;
+import com.app.restoapps.fragment.DetailOrderFragment;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,7 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ListOrderActivity extends AppCompatActivity {
+public class ListOrderActivity extends AppCompatActivity{
 
     @BindView(R.id.tlListOrder)
     TableLayout table;
@@ -93,4 +95,5 @@ public class ListOrderActivity extends AppCompatActivity {
 
         return tv;
     }
+
 }

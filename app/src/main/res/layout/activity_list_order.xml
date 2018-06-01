@@ -41,26 +41,6 @@
 
             </TableRow>
 
-            <TableRow
-                android:padding="@dimen/default_padding_inner_component">
-
-                <TextView
-                    android:textColor="@color/fieldTextColor"
-                    android:text="07-07-2012"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/default_text_size"
-                    />
-
-                <TextView
-                    android:textColor="@color/fieldTextColor"
-                    android:text="Rp. 1.200.000,-"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/default_text_size"
-                    />
-
-            </TableRow>
-
-
         </TableLayout>
 
     </ScrollView>
